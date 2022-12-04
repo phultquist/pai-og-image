@@ -7,6 +7,8 @@ export const config = {
   runtime: "experimental-edge",
 };
 
+const colCount = 4;
+
 function Col({ children }) {
   return (
     <div
@@ -14,7 +16,7 @@ function Col({ children }) {
         display: "flex",
         flexDirection: "column",
         padding: "0 1rem",
-        width: "33%",
+        width: `${100 / colCount}%`,
         overflow: "visible",
       }}
     >
@@ -57,8 +59,8 @@ function Img({ src }: { src: string }) {
 
 const paiLogo = (
   <svg
-    width="391"
-    height="130"
+    width="280"
+    height="95"
     viewBox="0 0 391 130"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -91,11 +93,10 @@ export default async function handler(req: NextRequest) {
   const nextData = root.querySelector("#__NEXT_DATA__");
   const props = JSON.parse(nextData.rawText).props.pageProps;
 
-  const urls = props.data.slice(0, 9).map((im) => {
+  const urls = props.data.slice(0, 12).map((im) => {
     return im.url;
   });
 
-  const colCount = 3;
   const urlsPerCol = Math.ceil(urls.length / colCount);
 
   const reorderedUrls = [];
