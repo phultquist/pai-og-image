@@ -58,8 +58,8 @@ function Img({ src }: { src: string }) {
 const paiLogo = (
   <svg
     width="391"
-    height="152"
-    viewBox="0 0 391 152"
+    height="130"
+    viewBox="0 0 391 130"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
