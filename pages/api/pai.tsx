@@ -99,15 +99,12 @@ export default async function handler(req: NextRequest) {
 
   const urlsPerCol = Math.ceil(urls.length / colCount);
 
-  const reorderedUrls = [];
+  const reorderedUrls = new Array(urls.length);
 
-  for (let i = 0; i < urlsPerCol; i++) {
-    for (let j = 0; j < colCount; j++) {
-      const index = i + j * urlsPerCol;
-      if (index < urls.length) {
-        reorderedUrls.push(urls[index]);
-      }
-    }
+  for (let i in urls) {
+    const colIndex = parseInt(i) % colCount;
+    const rowIndex = Math.floor(parseInt(i) / colCount);
+    reorderedUrls[colIndex * urlsPerCol + rowIndex] = urls[i];
   }
 
   const cols = [];
