@@ -91,8 +91,6 @@ export default async function handler(req: NextRequest) {
   const nextData = root.querySelector("#__NEXT_DATA__");
   const props = JSON.parse(nextData.rawText).props.pageProps;
 
-  console.log(props.data);
-
   const urls = props.data.slice(0, 9).map((im) => {
     return im.url;
   });
