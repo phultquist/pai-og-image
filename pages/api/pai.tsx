@@ -7,7 +7,7 @@ export const config = {
   runtime: "experimental-edge",
 };
 
-const colCount = 4;
+const colCount = 3;
 
 function Col({ children }) {
   return (
