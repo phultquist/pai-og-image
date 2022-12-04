@@ -11,8 +11,11 @@
   "dependencies": {
     "@vercel/og": "0.0.20",
     "next": "latest",
+    "node-html-parser": "^6.1.4",
+    "prop-types": "^15.8.1",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-responsive-masonry": "^2.1.6"
   },
   "devDependencies": {
     "@types/node": "^18.0.6",
