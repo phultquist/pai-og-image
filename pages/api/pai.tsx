@@ -115,7 +115,7 @@ export default async function handler(req: NextRequest) {
     const colUrls = reorderedUrls.slice(i * urlsPerCol, (i + 1) * urlsPerCol);
     cols.push(
       <Col>
-        {i === 2 && <div style={{ display: "flex" }}>{paiLogo}</div>}
+        {i === colCount - 1 && <div style={{ display: "flex" }}>{paiLogo}</div>}
         {colUrls.map((url) => (
           <Img src={url} />
         ))}
